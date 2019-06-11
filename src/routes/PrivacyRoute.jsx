@@ -2,15 +2,8 @@ import React from "react";
 
 export default class PrivacyRoute extends React.Component {
 
-    getMatomoOptoutLink() {
-        return "https://stats.dauntless-builder.com/index.php?module=CoreAdminHome&action=optOut&language=en&" +
-            "backgroundColor=&fontColor=&fontSize=&fontFamily=";
-    }
-
-    renderMatomoIframe() {
-        return <iframe
-            style={{border: "0", height: "200px", width: "600px"}}
-            src={this.getMatomoOptoutLink()}></iframe>;
+    getOptoutLink() {
+        return "https://tools.google.com/dlpage/gaoptout";
     }
 
     render() {
@@ -18,7 +11,7 @@ export default class PrivacyRoute extends React.Component {
             <h2 className="title">Privacy</h2>
 
             <p>
-                This site uses <a href="https://matomo.org/" target="_blank" rel="noopener noreferrer">Matomo</a> to
+                This site uses <a href="https://marketingplatform.google.com/about/analytics/" target="_blank" rel="noopener noreferrer">Google Analytics</a> to
                 analyze traffic and help us to improve your user experience.
             </p>
 
@@ -34,14 +27,12 @@ export default class PrivacyRoute extends React.Component {
                 </li>
             </ul>
 
-            <h3 style={{marginTop: "1.5rem"}} className="subtitle">Opt-out of Matomo</h3>
+            <h3 style={{marginTop: "1.5rem"}} className="subtitle">Opt-out of Google Analytics</h3>
 
             <p>
-                You can opt out of being tracked by our Matomo below or via this&nbsp;
-                <a href={this.getMatomoOptoutLink()} target="_blank" rel="noopener noreferrer">link</a>.
+                You can opt out of being tracked by our Google Analytics via this&nbsp;
+                <a href={this.getOptoutLink()} target="_blank" rel="noopener noreferrer">link</a>.
             </p>
-
-            {this.renderMatomoIframe()}
         </React.Fragment>;
     }
 }
