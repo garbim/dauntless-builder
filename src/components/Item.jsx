@@ -28,6 +28,7 @@ export default class Item extends React.Component {
     onClicked() {
         let filterOption = {};
         filterOption.__itemType = this.getItemType();
+        filterOption.__itemLevel = this.props.level;
         filterOption.filters = [];
 
         if(filterOption.__itemType === "Weapon" && this.props.item) {

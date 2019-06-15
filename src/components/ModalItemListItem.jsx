@@ -18,8 +18,15 @@ export default class ModalItemListItem extends React.Component {
 
         const itemType = ItemUtility.itemType(this.props.item.type);
 
-        return ItemUtility.maxLevel(itemType === "Weapon" ? "weapons" : "armours",
-            this.props.item.name);
+        const level = Math.min(
+            this.props.level,
+            ItemUtility.maxLevel(
+                itemType === "Weapon" ? "weapons" : "armours",
+                this.props.item.name
+            )
+        );
+
+        return level;
     }
 
     render() {
@@ -41,5 +48,6 @@ export default class ModalItemListItem extends React.Component {
 ModalItemListItem.propTypes = {
     type: PropTypes.string,
     item: PropTypeUtility.item(),
+    level: PropTypes.number,
     onSelected: PropTypes.func
 };

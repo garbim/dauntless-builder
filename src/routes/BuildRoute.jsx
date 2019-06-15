@@ -136,17 +136,17 @@ export default class BuildRoute extends React.Component {
         }, {});
     }
 
-    onNewItemSelected(itemType, itemName, data) {
+    onNewItemSelected(itemType, itemName, level, data) {
         let changes = {};
 
-        console.log("Selected: ", itemType, itemName, data);
+        console.log("Selected: ", itemType, itemName, level, data);
 
         if(itemType === "Weapon") {
             const item = BuildModel.findWeapon(itemName);
             const itemType = item ? item.type : null;
 
             changes.weapon_name = itemName;
-            changes.weapon_level = ItemUtility.maxLevel("weapons", itemName);
+            changes.weapon_level = Math.min(level, ItemUtility.maxLevel("weapons", itemName));
             changes.weapon_cell0 = "";
             changes.weapon_cell1 = "";
             if (!this.state.build.weapon || itemType !== this.state.build.weapon.type) {
@@ -184,7 +184,7 @@ export default class BuildRoute extends React.Component {
             let type = data.__armourType.toLowerCase();
 
             changes[`${type}_name`] = itemName;
-            changes[`${type}_level`] = ItemUtility.maxLevel("armours", itemName);
+            changes[`${type}_level`] = Math.min(level, ItemUtility.maxLevel("armours", itemName));
 
             const changesKey = `${type}_cell`;
             changes[changesKey] = "";
@@ -568,6 +568,7 @@ export default class BuildRoute extends React.Component {
             </div>
             <ItemSelectModal
                 data={this.state.modalData}
+                buildData={this.state.build}
                 itemData={this.state.itemData}
                 onSelected={this.onNewItemSelected.bind(this)}
                 onCanceled={this.onModalCanceled.bind(this)}
