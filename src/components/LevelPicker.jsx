@@ -44,5 +44,5 @@ export default class LevelPicker extends React.Component {
 
 LevelPicker.propTypes = {
     level: PropTypes.number,
-    onValueChanged: PropTypes.function
+    onValueChanged: PropTypes.func
 };

@@ -30,7 +30,8 @@ export default class ItemSelectModal extends React.Component {
             perkFilter: null,
             weaponTypeFilter: null,
             slotFilter: null,
-            rarityFilter: null
+            rarityFilter: null,
+            levelPickerValue: null
         };
     }
 
@@ -61,12 +62,14 @@ export default class ItemSelectModal extends React.Component {
     }
 
     onItemSelected(itemType, itemName) {
+        const selectedLevel = this.getSelectedLevel();
+
         let newState = Object.assign({}, this.defaultState);
         newState.open = false;
 
         this.setState(newState, () => {
             if(this.props.onSelected) {
-                this.props.onSelected(itemType, itemName, this.getSelectedLevel(), this.props.data.filterOptions);
+                this.props.onSelected(itemType, itemName, selectedLevel, this.props.data.filterOptions);
             }
         });
     }
@@ -428,7 +431,6 @@ export default class ItemSelectModal extends React.Component {
         }
 
         return <LevelPicker
-            className=""
             level={this.getSelectedLevel()}
             onValueChanged={val => this.setState({levelPickerValue: val})} />;
     }
