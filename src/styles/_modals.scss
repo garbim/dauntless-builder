@@ -41,6 +41,18 @@
 
                 .rc-slider {
                     margin-right: 15px;
+
+                    .rc-slider-track {
+                        background-color: $elemental-positive;
+                    }
+
+                    .rc-slider-handle {
+                        border-color: $elemental-positive;
+
+                        &:hover {
+                            border-color: $elemental-positive;
+                        }
+                    }
                 }
 
                 .level {

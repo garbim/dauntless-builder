@@ -215,13 +215,13 @@
                     }
 
                     &.elemental-strength {
-                        border: 1px solid #23d160;
-                        color: #23d160;
+                        border: 1px solid $elemental-positive;
+                        color: $elemental-positive;
                     }
 
                     &.elemental-weakness {
-                        border: 1px solid #ff3860;
-                        color: #ff3860;
+                        border: 1px solid $elemental-negative;
+                        color: $elemental-negative;
                     }
                 }
             }

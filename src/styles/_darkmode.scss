@@ -114,6 +114,11 @@ $theme-input-border: #242424;
         .modal-card-foot {
             background: $theme-quick-actions-bg;
             border-top: $theme-quick-actions-bg;
+
+            .rc-slider-rail,
+            .rc-slider-handle {
+                background-color: $theme-background-color;
+            }
         }
     }
 
