@@ -17,6 +17,7 @@
   "dependencies": {
     "hashids": "^1.1.4",
     "md5": "^2.2.1",
+    "rc-slider": "^8.6.13",
     "react": "^16.4.0",
     "react-copy-to-clipboard": "^5.0.1",
     "react-dom": "^16.4.0",
