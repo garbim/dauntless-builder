@@ -568,7 +568,6 @@ export default class BuildRoute extends React.Component {
             </div>
             <ItemSelectModal
                 data={this.state.modalData}
-                buildData={this.state.build}
                 itemData={this.state.itemData}
                 onSelected={this.onNewItemSelected.bind(this)}
                 onCanceled={this.onModalCanceled.bind(this)}
@@ -576,6 +575,7 @@ export default class BuildRoute extends React.Component {
             <RepeaterPartSelectModal
                 data={this.state.modalData}
                 itemData={this.state.itemData}
+                itemLevel={this.state.build.weapon_level}
                 onClosed={this.onRepeaterPartSelectModalClosed.bind(this)}
                 onSelected={this.onRepeaterPartSelected.bind(this)}
                 isOpen={this.state.repeaterPartSelectModalOpen} />

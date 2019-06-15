@@ -7,6 +7,7 @@ import ItemIcon from "./ItemIcon";
 import PropTypeUtility from "../utility/PropTypeUtility";
 import BuildModel from "../models/BuildModel";
 import RepeaterPart from "./RepeaterPart";
+import ItemUtility from "../utility/ItemUtility";
 
 export default class Repeater extends React.Component {
     constructor(props, context) {
@@ -91,7 +92,7 @@ export default class Repeater extends React.Component {
                     <div className={"item item-repeater"+ (this.props.item.cells.length === 0 ? " no-cells" : "")} title={this.props.item.description} onClick={() => this.onClicked()}>
                         <ItemIcon item={this.props.item} defaultType={"Weapon"} />
                         <div className="item-data">
-                            <h3 className="item-title">Ostian Repeaters</h3>
+                            <h3 className="item-title">Ostian Repeaters {ItemUtility.levelString(this.props.level)}</h3>
                             <div className="stat-data">
                                 <strong>Power</strong>: {this.getTotalPower()}
                             </div>

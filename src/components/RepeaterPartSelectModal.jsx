@@ -47,7 +47,11 @@ export default class RepeaterPartSelectModal extends React.Component {
             const part = parts[partName];
 
             items.push(
-                <RepeaterPart key={partName} part={part} partType={partType}
+                <RepeaterPart
+                    key={partName}
+                    part={part}
+                    partType={partType}
+                    level={this.props.itemLevel}
                     onClicked={this.onPartSelected.bind(this)} />
             );
         }
@@ -92,5 +96,6 @@ RepeaterPartSelectModal.propTypes = {
     onClosed: PropTypes.func,
     data: PropTypes.object,
     onSelected: PropTypes.func,
-    itemData: PropTypes.object
+    itemData: PropTypes.object,
+    itemLevel: PropTypes.number
 };
