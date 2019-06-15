@@ -20,7 +20,7 @@ $theme-input-background: #363636;
 $theme-input-color: #f5f5f5;
 $theme-input-border: #242424;
 
-.is-darkmode {
+@mixin dark-mode() {
     .title,
     .subtitle {
         color: $theme-font-color;
@@ -174,5 +174,19 @@ $theme-input-border: #242424;
 
     .item-title-wrapper .subtitle {
         border-bottom: 1px solid $theme-input-border;
+    }
+}
+
+.is-darkmode {
+    @include dark-mode();
+}
+
+// my SCSS compiler doesn't like this new media query, using it as a variable works tho...
+$prefers-color-scheme-scss-hack: "(prefers-color-scheme: dark)";
+
+// if user has set a preference to see dark browsers, use dark color scheme
+@media #{$prefers-color-scheme-scss-hack} {
+    .primary-container:not(.is-lightmode) {
+        @include dark-mode();
     }
 }

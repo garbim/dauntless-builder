@@ -40,8 +40,8 @@ export default class AppContainer extends React.Component {
     getExtraClasses() {
         let classes = [];
 
-        if(SettingsUtility.isDarkModeEnabled()) {
-            classes.push("is-darkmode");
+        if (SettingsUtility.has("theme")) {
+            classes.push(`is-${SettingsUtility.get("theme")}mode`);
         }
 
         return classes.join(" ");
@@ -76,7 +76,7 @@ export default class AppContainer extends React.Component {
             </Helmet>
             <Router>
                 <React.Fragment>
-                    <div className={"container " + this.getExtraClasses()}>
+                    <div className={"primary-container container " + this.getExtraClasses()}>
                         <Link to="/">
                             <img className="logo" src="/assets/logo.png" />
                         </Link>
