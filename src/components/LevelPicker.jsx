@@ -31,7 +31,7 @@ export default class LevelPicker extends React.Component {
     }
 
     render() {
-        return <div className="level-picker">
+        return <div className="level-picker only-desktop">
             <Slider
                 min={0}
                 max={this.getMaxLevel()}
