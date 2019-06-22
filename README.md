@@ -14,15 +14,7 @@ Coming soon...
 
 All Dauntless related assets are the property of Phoenix Labs.
 
-## Contact me
 
-If you want to contact me, you can do so via these methods:
-
-* E-Mail: me@atomicptr.de
-* Discord: Hecate#0001
-* Reddit: /u/SirNullptr
-
-Please use [Github Issues](https://github.com/atomicptr/dauntless-builder/issues) for feature requests, bug reports and stuff along those lines.
 
 ## License
 
